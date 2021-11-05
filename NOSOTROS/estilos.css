@@ -604,19 +604,3 @@ nav {
    line-height: 0px;
 }
 
-nav ul#menu li {
-    display: inline;
-}
-
-nav ul#menu li a {
-    background-color: #000000;
-    color: blue;
-    padding: 10px 40px;
-    text-decoration: none;
-    border-radius: 16px 16px;
-
-}
-
-nav ul#menu li a:hover {
-    background-color:#fff;
-}
