@@ -12,15 +12,15 @@ header {
     font-size: 0.8em;
     border-radius: 20px;
     height: 25%;
-    background-color:green;
-    color:yellow;
+    background-color:#5AF335;
+    color:black;
     text-align: center;
     padding:1px;
     margin-bottom: 1px;
 }
 header h2 {
 
-    text-shadow: 8px 8px 8px #FF0000;
+    text-shadow: 8px 8px 8px #orange;
 }
 
  figure {   
@@ -37,7 +37,7 @@ header h2 {
  }
 nav {
     border-radius: 20px;
-    background: greenYellow;
+    background: #C6F8EA;
     margin-top: 0px;
     padding: 1px;
    line-height: 0px;
@@ -51,7 +51,7 @@ nav ul#menu li {
 }
 
 nav ul#menu li a {
-    background-color: #339933;
+    background-color: blue;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -60,7 +60,7 @@ nav ul#menu li a {
 }
 
 nav ul#menu li a:hover {
-    background-color: orange;
+    background-color: #ECAB47;
 }
 
 section {
@@ -77,4 +77,29 @@ section {
     padding: 1px;
     
     
+}
+section {
+    margin: auto;
+    
+    width: 80%;
+    height: 100%;
+    background-color: #DCB7F2;
+    text-align: center;
+    font-family: 'Playball', cursive;
+    font-size: 1.5em;
+    border-radius: 20px;
+    
+    padding: 1px;
+    
+    
+    box-shadow: 10px 10px 5px #888888;
+}
+
+footer {
+    border-radius: 20px;
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;      
 }
