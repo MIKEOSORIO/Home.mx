@@ -146,3 +146,25 @@ border-radius: 150px;
 	align-items: center;
 	text-align: center;
 }
+
+
+
+.form_search{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -0-flex;
+	display: flex;
+	float: right;
+	background: initial;
+	padding: 10px;
+	border-radius: 10px;
+	 }
+	
+	.form_search .btn_search{
+	background: #1faac8;
+	color: #FFF;
+	padding: e 20px;
+	border: 0;
+	cursor: pointer;
+	margin-Left: 18p }
