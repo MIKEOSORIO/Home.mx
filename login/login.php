@@ -13,7 +13,7 @@
         $clave = hash('sha512', $clave);
         
         try{
-            $conexion = new PDO('mysql:host=localhost;dbname=logintuto', 'root', '');
+            $conexion = new PDO('mysql:host=localhost;dbname=home', 'root', '');
             }catch(PDOException $prueba_error){
                 echo "Error: " . $prueba_error->getMessage();
             }

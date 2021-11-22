@@ -1,6 +1,6 @@
 <?php
- require 'conexion.php';
-  
+ require '../conexion/conexion.php';
+ $idpropiedad  = $_POST['idpropiedad']; 
  $descripcion  = $_POST['descripcion'];
  $numcuartos = $_POST['numcuartos'];
  $espaciopersonas = $_POST['espaciopersonas'];
@@ -14,19 +14,20 @@
  $servicios = $_POST['servicios'];
  $idclientes = $_POST['idclientes'];
 
-$insertar = "INSERT INTO propiedad VALUES ('$descripcion','$numcuartos','espaciopersonas','precio','estrellaspuntuacion','fechaalta','cantidaddias','cantidadnoche','iddireccion','idadicionales','servicios','idclientes') ";
+$insertar = "INSERT INTO propiedad VALUES ('$idpropiedad','$descripcion','$numcuartos','$espaciopersonas','$precio','$estrellaspuntuacion',
+'$fechaalta','$cantidaddias','$cantidadnoche','$iddireccion','$idadicionales','$servicios','$idclientes') ";
 
 $query = mysqli_query($conectar, $insertar);
 
 if($query){
 
    echo "<script> alert('correcto');
-    location.href = 'index.html';
+    location.href = '../index.html';
    </script>";
 
 }else{
     echo "<script> alert('incorrecto');
-    location.href = 'insertar.html';
+    location.href = '../pagina/insertar.html';
     </script>";
 }
 
