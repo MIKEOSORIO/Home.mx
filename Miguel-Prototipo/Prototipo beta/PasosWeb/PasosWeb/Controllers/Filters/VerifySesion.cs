@@ -18,7 +18,7 @@ namespace PasosWeb.Controllers.Filters
                     // verificar el resultado bool
                     if (filterContext.Controller is AccountController == false)
                     {
-                        filterContext.HttpContext.Response.Redirect("~/Account");
+                        filterContext.HttpContext.Response.Redirect("~/PaginaPrincipal");
                     }
 
                 }

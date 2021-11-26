@@ -13,7 +13,7 @@ namespace PasosWeb {
     public class MvcApplication : HttpApplication {
         protected void Application_Start() {
             AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+          //  FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

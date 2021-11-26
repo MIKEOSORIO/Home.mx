@@ -11,16 +11,16 @@
     <link rel="icon" type="image/png" href="~/Images/pazossanchez.png" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    @Styles.Render("~/Content/bundle")
+    @*@Styles.Render("~/Content/bundle")
     @Scripts.Render("~/Scripts/bundle")
     @Styles.Render("~/Content/fonts/Fonts.css")
     @Styles.Render("~/Content/Customize/SoltumVariables.css")
     @Styles.Render("~/Content/Customize/Menu.css")
     @Styles.Render("~/Content/Customize/soltum-main.css")
-    @Styles.Render("~/Content/Customize/soltum-tooltip-custom.css")
+    @Styles.Render("~/Content/Customize/soltum-tooltip-custom.css")*@
 </head>
 <body>
-    <button id="BurgerButton" type="button" class="navbar-toggle">
+    @*<button id="BurgerButton" type="button" class="navbar-toggle">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -48,21 +48,21 @@
                                 <div class="UserInfoTitle">Datos de sesión</div>
                             </div>
                             <div class="ContainerUserInfo">
-                                @*<div class="UserInfoLabels">
+                                <div class="UserInfoLabels">
                                         <label id="lblTipoUser"></label>
-                                    </div>*@
+                                    </div>
                                 <div class="UserInfoLabels">
                                     <label id="lblUser">@Session["LoginUser"]</label>
                                 </div>
-                                @*<div class="UserInfoLabels">
+                                <div class="UserInfoLabels">
                                         <label id="lblEmpresa"></label>
                                     </div>
                                     <div class="UserInfoLabels">
                                         <label id="lblEmail"></label>
-                                    </div>*@
+                                    </div>
                             </div>
                         </div>
-                        @*<div id="divCambPass">
+                        <div id="divCambPass">
                                 <a id="hrefCambioPass" class="UserinfoButton" href="#">¿Cambiar Contraseña?</a>
                             </div>
                             <div id="divDatosProveedor">
@@ -72,15 +72,15 @@
                                 <a id="hrefContratosProveedor" class="UserinfoButton" href="DatosProveedor.aspx">Agregar Contratos.</a>
                             </div>
                             <div id="btnLoguear" class="UserinfoButton">Cambio de Sesión</div>
-                            <a id="btnSalir" class="UserinfoButton" href="Index.aspx">Cerrar Sesión</a>*@
+                            <a id="btnSalir" class="UserinfoButton" href="Index.aspx">Cerrar Sesión</a>
                         @Html.ActionLink("Cerrar sesión", "Login", "Account", null, new { @class = "UserinfoButton" })
                     </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </nav>*@
 
-    <div id="menuasd" class="">
+    @*<div id="menuasd" class="">
         <div id="myUL" class="menu-collapse">
             <div class="config-menu-drop Content_Card" id="CardMenu01">
                 <a id="Menu01" class="card" href="~/user/Index">
@@ -153,7 +153,7 @@
                 </a>
             </div>
 
-            @*<div class="config-menu-drop Content_Card" id="CardMenu04">
+            <div class="config-menu-drop Content_Card" id="CardMenu04">
             <a id="Menu04" class="card" href="~/cxc/Index">
                 <div class="card-header">
                     <img src="~/Images/dollar.png" class="imgLogo" />
@@ -163,9 +163,9 @@
                 </div>
                 <span class="tooltiptext">Cuentas x Cobrar</span>
             </a>
-        </div>*@
+        </div>
 
-            @*<div class="config-menu-drop Content_Card" id="CardMenu04">
+            <div class="config-menu-drop Content_Card" id="CardMenu04">
                 <a id="Menu04" class="card" href="~/gastos/Index">
                     <div class="card-header">
                         <img src="~/Images/payment.png" class="imgLogo" />
@@ -175,7 +175,7 @@
                     </div>
                     <span class="tooltiptext">Gastos</span>
                 </a>
-            </div>*@
+            </div>
 
             <div class="config-menu-drop Content_Card" id="CardMenu04">
                 <a id="Menu04" class="card" href="~/inventario/Index">
@@ -213,7 +213,7 @@
                 </a>
             </div>
 
-            @*<div class="config-menu-drop Content_Card" id="CardMenu04">
+            <div class="config-menu-drop Content_Card" id="CardMenu04">
             <a id="Menu04" class="card" href="~/prestamos/Index">
                 <div class="card-header">
                     <img src="~/Images/car-loan.png" class="imgLogo" />
@@ -223,7 +223,7 @@
                 </div>
                 <span class="tooltiptext">Prestamos</span>
             </a>
-        </div>*@
+        </div>
 
             <div class="config-menu-drop Content_Card" id="CardMenu04">
             <a id="Menu04" class="card" href="~/pagos/Index">
@@ -262,20 +262,20 @@
             </div>
         </div>
 
-    </div>
+    </div>*@
 
     <div id="bodyPage" class="container body-content">
         @RenderBody()
-        <footer>
+        @*<footer>
             <p>&copy; @DateTime.Now.Year - Pazos Sanchez Construcciones. Todos los derechos reservados. </p>
            
-        </footer>
+        </footer>*@
     </div>
 
     @*@Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")*@
+        @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/View/Shared/Menu.js")
     @Styles.Render("~/Content/Customize/ThemeSoltumDX.css")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)*@
 </body>
 </html>

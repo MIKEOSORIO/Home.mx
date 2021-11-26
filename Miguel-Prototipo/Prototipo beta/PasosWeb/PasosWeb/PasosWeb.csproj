@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PasosWeb</RootNamespace>
     <AssemblyName>PasosWeb</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress>
@@ -82,6 +82,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -202,6 +203,30 @@
     <Content Include="Content\login.css" />
     <Content Include="Content\logoversion.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\style\PPrincipal\animate.css" />
+    <Content Include="Content\style\PPrincipal\bootstrap.css" />
+    <Content Include="Content\style\PPrincipal\bootstrap.min.css" />
+    <Content Include="Content\style\PPrincipal\color\default.css" />
+    <Content Include="Content\style\PPrincipal\flexslider.css" />
+    <Content Include="Content\style\PPrincipal\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\style\PPrincipal\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\style\PPrincipal\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\style\PPrincipal\helper.css" />
+    <Content Include="Content\style\PPrincipal\nivo-lightbox-theme\default\close%402x.png" />
+    <Content Include="Content\style\PPrincipal\nivo-lightbox-theme\default\close.png" />
+    <Content Include="Content\style\PPrincipal\nivo-lightbox-theme\default\default.css" />
+    <Content Include="Content\style\PPrincipal\nivo-lightbox-theme\default\loading%402x.gif" />
+    <Content Include="Content\style\PPrincipal\nivo-lightbox-theme\default\loading.gif" />
+    <Content Include="Content\style\PPrincipal\nivo-lightbox-theme\default\next%402x.png" />
+    <Content Include="Content\style\PPrincipal\nivo-lightbox-theme\default\next.png" />
+    <Content Include="Content\style\PPrincipal\nivo-lightbox-theme\default\prev%402x.png" />
+    <Content Include="Content\style\PPrincipal\nivo-lightbox-theme\default\prev.png" />
+    <Content Include="Content\style\PPrincipal\nivo-lightbox.css" />
+    <Content Include="Content\style\PPrincipal\owl.carousel.css" />
+    <Content Include="Content\style\PPrincipal\owl.theme.css" />
+    <Content Include="Content\style\PPrincipal\pe-icon-7-stroke.css" />
+    <Content Include="Content\style\PPrincipal\slippry.css" />
+    <Content Include="Content\style\PPrincipal\stylePrincipal.css" />
     <Content Include="Content\style\style.css" />
     <Content Include="Departamentos\ejemplo.jpg" />
     <Content Include="favicon.ico" />
@@ -234,15 +259,37 @@
     <Content Include="Images\Iconos-Portal-Intranet-Satelites.png" />
     <Content Include="Images\inventory.png" />
     <Content Include="Images\money-bag.png" />
+    <Content Include="Images\parallax\2.jpg" />
+    <Content Include="Images\parallax\3.jpg" />
+    <Content Include="Images\parallax\pexels-photo-2082089.jpeg" />
     <Content Include="Images\payment.png" />
     <Content Include="Images\pazossanchez.png" />
     <Content Include="Images\pexels-johannes-plenio-1103970.jpg" />
     <Content Include="Images\profile.png" />
     <Content Include="Images\reports.png" />
+    <Content Include="Images\slides\pexels-slider-1.jpeg" />
+    <Content Include="Images\slides\pexels-slider-2.jpeg" />
+    <Content Include="Images\slides\pexels-slider.jpeg" />
     <Content Include="Images\social.png" />
     <Content Include="Images\team-leader.png" />
     <Content Include="Images\teamwork.png" />
+    <Content Include="Images\team\1.png" />
+    <Content Include="Images\team\2.png" />
+    <Content Include="Images\team\3.png" />
+    <Content Include="Images\team\4.png" />
+    <Content Include="Images\team\5.png" />
+    <Content Include="Images\team\6.png" />
+    <Content Include="Images\team\7.png" />
     <Content Include="Images\user.png" />
+    <Content Include="Images\works\1.jpg" />
+    <Content Include="Images\works\2.jpg" />
+    <Content Include="Images\works\3.jpg" />
+    <Content Include="Images\works\4.jpg" />
+    <Content Include="Images\works\5.jpg" />
+    <Content Include="Images\works\6.jpg" />
+    <Content Include="Images\works\7.jpg" />
+    <Content Include="Images\works\8.jpg" />
+    <Content Include="Images\logo-home.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -372,6 +419,36 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\style\PPrincipal\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\style\PPrincipal\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\style\PPrincipal\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\style\PPrincipal\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\core.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\icons.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\larger.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\list.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\mixins.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\path.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\spinning.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\stacked.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\less\variables.less" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_core.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_list.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_path.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_spinning.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\style\PPrincipal\font-awesome\scss\_variables.scss" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
@@ -430,6 +507,27 @@
     <Content Include="Scripts\jszip.js.bak" />
     <Content Include="Scripts\jszip.min.js.bak" />
     <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\View\contactform\contactform.js" />
+    <Content Include="Scripts\View\contactform\contactform.php" />
+    <Content Include="Scripts\View\PPrincipal\bootstrap.js" />
+    <Content Include="Scripts\View\PPrincipal\bootstrap.min.js" />
+    <Content Include="Scripts\View\PPrincipal\custom.js" />
+    <Content Include="Scripts\View\PPrincipal\jquery.appear.js" />
+    <Content Include="Scripts\View\PPrincipal\jquery.easing.min.js" />
+    <Content Include="Scripts\View\PPrincipal\jquery.fitvids.js" />
+    <Content Include="Scripts\View\PPrincipal\jquery.flexslider-min.js" />
+    <Content Include="Scripts\View\PPrincipal\jquery.mb.YTPlayer.js" />
+    <Content Include="Scripts\View\PPrincipal\jquery.min.js" />
+    <Content Include="Scripts\View\PPrincipal\jquery.nicescroll.min.js" />
+    <Content Include="Scripts\View\PPrincipal\jquery.scrollTo.js" />
+    <Content Include="Scripts\View\PPrincipal\jquery.sticky.js" />
+    <Content Include="Scripts\View\PPrincipal\morphext.min.js" />
+    <Content Include="Scripts\View\PPrincipal\nivo-lightbox.min.js" />
+    <Content Include="Scripts\View\PPrincipal\owl.carousel.min.js" />
+    <Content Include="Scripts\View\PPrincipal\slippry.min.js" />
+    <Content Include="Scripts\View\PPrincipal\stellar.js" />
+    <Content Include="Scripts\View\PPrincipal\waypoints.min.js" />
+    <Content Include="Scripts\View\PPrincipal\wow.min.js" />
     <Content Include="Scripts\View\Shared\Menu.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -512,6 +610,7 @@
     <Content Include="Views\Account\Forgot.cshtml" />
     <Content Include="Views\Home\_CardViewPartial.cshtml" />
     <Content Include="Views\Propiedad\Index.cshtml" />
+    <Content Include="Views\PaginaPrincipal\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -528,6 +627,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Filters\VerifySesion.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PaginaPrincipalController.cs" />
     <Compile Include="Controllers\PropiedadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -599,7 +699,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55937</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59289/</IISUrl>
+          <IISUrl>http://localhost:5928/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
