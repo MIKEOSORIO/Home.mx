@@ -229,6 +229,7 @@
     <Content Include="Content\style\PPrincipal\pe-icon-7-stroke.css" />
     <Content Include="Content\style\PPrincipal\slippry.css" />
     <Content Include="Content\style\PPrincipal\stylePrincipal.css" />
+    <Content Include="Content\style\Registro\RegistroStyle.css" />
     <Content Include="Content\style\style.css" />
     <Content Include="Departamentos\ejemplo.jpg" />
     <Content Include="favicon.ico" />
@@ -250,8 +251,10 @@
     <Content Include="Images\date.png" />
     <Content Include="Images\document.png" />
     <Content Include="Images\dollar.png" />
+    <Content Include="Images\fondo-login.jpg" />
     <Content Include="Images\Fondo-Portal-Proveedor-2000x1200pxv2.png" />
     <Content Include="Images\hand.png" />
+    <Content Include="Images\home.mx logo.jpeg" />
     <Content Include="Images\Iconos-Portal-Intranet-15.png" />
     <Content Include="Images\Iconos-Portal-Intranet-16.png" />
     <Content Include="Images\Iconos-Portal-Intranet-17.png" />
@@ -268,6 +271,8 @@
     <Content Include="Images\pazossanchez.png" />
     <Content Include="Images\pexels-johannes-plenio-1103970.jpg" />
     <Content Include="Images\profile.png" />
+    <Content Include="Images\Registro\background-registro.jpg" />
+    <Content Include="Images\Registro\logo-mx.png" />
     <Content Include="Images\reports.png" />
     <Content Include="Images\slides\pexels-slider-1.jpeg" />
     <Content Include="Images\slides\pexels-slider-2.jpeg" />
@@ -619,6 +624,7 @@
     <Content Include="Views\Home\_CardViewPartial.cshtml" />
     <Content Include="Views\Propiedad\Index.cshtml" />
     <Content Include="Views\PaginaPrincipal\Index.cshtml" />
+    <Content Include="Views\Registro\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -637,6 +643,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaginaPrincipalController.cs" />
     <Compile Include="Controllers\PropiedadController.cs" />
+    <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -688,9 +695,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\style\Registro\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
