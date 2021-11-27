@@ -1080,7 +1080,7 @@ hr {
 
     .team-social a {
         margin: 0;
-        padding: 0;
+        padding: 10px;
         display: block;
         width: 40px;
         height: 40px;

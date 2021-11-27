@@ -1,8 +1,4 @@
-/**
- * slippry v1.2.1 - Simple responsive content slider
-/* -------------------------- MIXINS ---------------------------------- */
-/* -------------------------- END MIXINS ---------------------------------- */
-/* kenBurns animations, very basic */
+
 @-webkit-keyframes left-right {
   0% {
     -webkit-transform: translateY(-20%) translateX(-10%);
@@ -253,8 +249,6 @@
   border: 0;
 }
 
-
-/* next/ prev buttons, with arrows and clickable area a lot larger than the visible buttons */
 .sy-controls {
   display: none;
   list-style: none;

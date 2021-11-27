@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PasosWeb",
+    "\\PasosWeb\\Views",
+    "\\PasosWeb\\Views\\Shared"
   ],
-  "SelectedNode": "\\PasosWeb.sln",
+  "SelectedNode": "\\PasosWeb\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
