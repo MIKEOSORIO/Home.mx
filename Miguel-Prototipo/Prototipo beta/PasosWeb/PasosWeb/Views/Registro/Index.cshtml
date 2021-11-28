@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model PasosWeb.Models.usuario
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -13,22 +14,26 @@
     <div class="login-box">
         <img src="~/Images/Registro/logo-mx.png" class="avatar" alt="Avatar Image">
         <h1>REGISTRATE</h1>
-        <form>
+        <form action="GridViewPartialAddNew" method="post">
             <!-- USERNAME INPUT -->
             <label for="Nombre">Nombre(s)</label>
-            <input type="text" placeholder="Ejemplo: Aaron Mateo">
+            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Correo Electrónico" } })
+
             <!-- PASSWORD INPUT -->
             <label for="Apellido">Apellido(s)</label>
-            <input type="text" placeholder="Ejemplo: Rodriguez Mendoza">
+            @Html.EditorFor(model => model.apellido, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Correo Electrónico" } })
+
 
             <label for="Correo">Correo</label>
-            <input type="email" placeholder="ejemplo@gmail.com">
+            @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Correo Electrónico" } })
 
             <label for="password">Password</label>
-            <input type="password" placeholder="Enter Password">
+            @Html.EditorFor(model => model.contraseña, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Correo Electrónico" } })
+
 
             <label for="Telefono">Teléfono</label>
-            <input type="phone" placeholder="1234567890">
+            @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Correo Electrónico" } })
+
 
             <input type="submit" value="Registro">
             <a href="~/Account/Login">¿Ya tienes una cuenta?</a><br>
