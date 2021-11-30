@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model PasosWeb.Models.Formulario
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,7 +11,7 @@
     <title>PRINCIPAL | HOME.MX</title>
 
     <link href="~/Content/style/PPrincipal/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="~/Content/style/PPrincipal/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/style/PPrincipal/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/style/PPrincipal/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/style/PPrincipal/nivo-lightbox-theme/default/default.css" rel="stylesheet" />
     <link href="~/Content/style/PPrincipal/nivo-lightbox.css" rel="stylesheet" />
@@ -21,38 +22,7 @@
     <link href="~/Content/style/PPrincipal/animate.css" rel="stylesheet" />
     <link href="~/Content/style/PPrincipal/stylePrincipal.css" rel="stylesheet" />
     <link href="~/Content/style/PPrincipal/color/default.css" rel="stylesheet" />
-   
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2? family=M+PLUS+1:wght@300;500&family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2? family=M+PLUS+1:wght@300;500&family=Roboto+Slab:wght@300&family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2? family=Lora&display=swap" rel="stylesheet">
-
-
-        <title>PRINCIPAL | HOME.MX</title>
-
-        <!-- css -->
-        <link href="~/Content/style/PPrincipal/bootstrap.min.css" />
-        <link rel="preconnect" href="~/Content/style/PPrincipal/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-        <link href="~/Content/style/PPrincipal/nivo-lightbox.css" rel="stylesheet" />
-        <link href="~/Content/style/PPrincipal/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
-        <link href="~/Content/style/PPrincipal/owl.carousel.css" rel="stylesheet" media="screen" />
-        <link href="~/Content/style/PPrincipal/owl.theme.css" rel="stylesheet" media="screen" />
-        <link href="~/Content/style/PPrincipal/flexslider.css" rel="stylesheet" />
-        <link href="~/Content/style/PPrincipal/slippry.css" rel="stylesheet">
-        <link href="~/Content/style/PPrincipal/animate.css" rel="stylesheet" />
-        <link href="~/Content/style/PPrincipal/style.css" rel="stylesheet">
-        <link href="~/Content/style/PPrincipal/color/default.css" rel="stylesheet">
-
-
-    </head>
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
@@ -569,33 +539,37 @@
             </div>
 
             <div class="container">
+                
+                <form action="PaginaPrincipal/EnviarFormulario" method="post">
+                    <div class="row marginbot-80">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div id="sendmessage">Tu mensajes ha sido enviado. ¡Muchas gracias!</div>
+                            <div id="errormessage"></div>
+                            <form action="" method="post" role="form" class="contactForm">
+                                <div class="form-group">
+                                    
+                                    @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Ejemplo: Aaron Mateo"} })
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Ejemplo: correo@gmail.com" } })
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.EditorFor(model => model.asunto, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Asunto: " } })
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.EditorFor(model => model.mensaje, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Mensaje: " } })
+                                    <div class="validation"></div>
+                                </div>
 
-                <div class="row marginbot-80">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div id="sendmessage">Tu mensajes ha sido enviado. ¡Muchas gracias!</div>
-                        <div id="errormessage"></div>
-                        <form action="" method="post" role="form" class="contactForm">
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre. Ejemplo:  Aaron Mateo" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                <div class="validation"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo. Ejemplo: Aaron@gmail.com" data-rule="email" data-msg="Please enter a valid email" />
-                                <div class="validation"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                                <div class="validation"></div>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Su mensaje"></textarea>
-                                <div class="validation"></div>
-                            </div>
-
-                            <div class="text-center"><button type="submit" class="btn btn-skin btn-lg btn-block">Enviar Mensaje</button></div>
-                        </form>
+                                <div class="text-center"><button type="submit" class="btn btn-skin btn-lg btn-block">Enviar Mensaje</button></div>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                </form>
+
 
 
             </div>
@@ -663,7 +637,7 @@
     <script src="~/Scripts/View/PPrincipal/custom.js"></script>
     <script src="~/Scripts/View/contactform/contactform.js"></script>
 
-
     </body>
 
 </html>
+

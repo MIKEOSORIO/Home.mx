@@ -7,8 +7,17 @@ using System.Web.Mvc;
 
 namespace PasosWeb.Controllers {
     public class HomeController : Controller {
+        
         public ActionResult Index() {
-            return View();
+           
+            if (Session["IdUser"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "PaginaPrincipal");
+            }
         }
 
         PasosWeb.Models.dbhomemxEntities1 db = new PasosWeb.Models.dbhomemxEntities1();

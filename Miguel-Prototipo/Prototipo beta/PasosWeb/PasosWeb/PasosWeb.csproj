@@ -651,6 +651,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ErrorInfo.cs" />
+    <Compile Include="Models\Formulario.cs" />
     <Compile Include="Models\imagen.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

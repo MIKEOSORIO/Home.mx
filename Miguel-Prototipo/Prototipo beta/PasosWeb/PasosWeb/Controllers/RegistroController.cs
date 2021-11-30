@@ -27,7 +27,7 @@ namespace PasosWeb.Controllers
                 }
                 catch (Exception e)
                 {
-                    // ViewData["EditError"] = e.Message;
+                    ViewData["EditError"] = e.Message;
                 }
             }
             else

@@ -13,6 +13,7 @@ namespace PasosWeb.Controllers
         // GET: Propiedad
         public ActionResult Index()
         {
+
             int idpropiedad = (int)Session["idpropiedad"];
             PasosWeb.Models.dbhomemxEntities1 model = new Models.dbhomemxEntities1();
             var propiedad = model.propiedad.Where(x=>x.idpropiedad== idpropiedad).Single();
@@ -66,9 +67,6 @@ namespace PasosWeb.Controllers
             #endregion
             Session["resumen"] = resumen;
             //Session["imagen"] = imagen;
-            
-            
-
             return View();
         }
     }

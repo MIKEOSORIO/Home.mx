@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\PasosWeb",
+    "\\PasosWeb\\Controllers",
     "\\PasosWeb\\Views",
-    "\\PasosWeb\\Views\\Shared"
+    "\\PasosWeb\\Views\\Account",
+    "\\PasosWeb\\Views\\Registro"
   ],
   "SelectedNode": "\\PasosWeb.sln",
   "PreviewInSolutionExplorer": false

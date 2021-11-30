@@ -17,22 +17,22 @@
         <form action="GridViewPartialAddNew" method="post">
             <!-- USERNAME INPUT -->
             <label for="Nombre">Nombre(s)</label>
-            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Correo Electrónico" } })
+            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Ejemplo: Aaron Mateo" } })
 
             <!-- PASSWORD INPUT -->
             <label for="Apellido">Apellido(s)</label>
-            @Html.EditorFor(model => model.apellido, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Correo Electrónico" } })
+            @Html.EditorFor(model => model.apellido, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Ejemplos: Gonzales Espinosa" } })
 
 
             <label for="Correo">Correo</label>
-            @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Correo Electrónico" } })
+            @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "ejemplo@gmail.com" } })
 
             <label for="password">Password</label>
-            @Html.EditorFor(model => model.contraseña, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Correo Electrónico" } })
+            @Html.EditorFor(model => model.contraseña, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Tu contraseña" } })
 
 
             <label for="Telefono">Teléfono</label>
-            @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Correo Electrónico" } })
+            @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Tu telefono" } })
 
 
             <input type="submit" value="Registro">
