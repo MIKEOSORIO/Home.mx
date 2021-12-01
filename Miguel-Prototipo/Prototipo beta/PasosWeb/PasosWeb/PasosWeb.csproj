@@ -229,6 +229,7 @@
     <Content Include="Content\style\PPrincipal\pe-icon-7-stroke.css" />
     <Content Include="Content\style\PPrincipal\slippry.css" />
     <Content Include="Content\style\PPrincipal\stylePrincipal.css" />
+    <Content Include="Content\style\PPublicar\style-publicar.css" />
     <Content Include="Content\style\Registro\RegistroStyle.css" />
     <Content Include="Content\style\style.css" />
     <Content Include="Departamentos\ejemplo.jpg" />
@@ -625,6 +626,7 @@
     <Content Include="Views\Propiedad\Index.cshtml" />
     <Content Include="Views\PaginaPrincipal\Index.cshtml" />
     <Content Include="Views\Registro\Index.cshtml" />
+    <Content Include="Views\PublicarPropiedad\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -643,6 +645,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaginaPrincipalController.cs" />
     <Compile Include="Controllers\PropiedadController.cs" />
+    <Compile Include="Controllers\PublicarPropiedadController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
