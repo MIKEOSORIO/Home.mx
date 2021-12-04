@@ -64,88 +64,70 @@
             <input class="controls" type="number" name="Total de personas" id="#" placeholder="Total personas">
             <input class="controls" type="number" name="Precio" id="#" placeholder="Precio">
             <input class="controls" type="number" name="Deposito" id="#" placeholder="Deposito">
-            <input class="controls" type="text" name="Contacto" id="#" placeholder="Contacto">
+            <input class="controls" type="text" name="Contacto" id="#" placeholder="Contrato">
+
+            <div class="alinear">
+                <section>
+                    <form action="/">
+
+                        <fieldset>
+                            
+                               <h5>SERVICIOS</h5>
+                               
+                                    <label for="INTERNET">INTERNET</label>
+                                    <input type="checkbox" name="skillset" value="INTERNET" />
+
+                                    <label for="COMIDA">COMIDA</label>
+                                    <input type="checkbox" name="skillset" value="COMIDA" />
+
+                                    <label for="LIMPIEZA">LIMPIEZA</label>
+                                    <input type="checkbox" name="skillset" value="LIMPIEZA" />
+
+                                    <label for="AMUEBLADA">AMUEBLADA</label>
+                                    <input type="checkbox" name="skillset" value="AMUEBLADA" />
+
+                                    <label for="PARKING">PARKING</label>
+                                    <input type="checkbox" name="skillset" value="PARKING" />
+                                
+                                
+                        </fieldset>
 
 
-            <div class="row no-order11">
-                <div class="form-group-lg col-xs-5">
-                    <h2>Servicios</h2>
-                    <div class="form-group-lg clearfix">
-                        <!--if this is your looped div, then you can just put the class "checkbox" in here-->
-                        <div th:each="facility : ${facilities}">
-                            <div class="checkbox">
-                                <label class="checkbox-inline" th:text="${facility}">
-                                    <input type="checkbox" th:field="*{checkedItems}" th:value="${facility}" />
-                                    1
-                                </label>
-                            </div>
+                        <fieldset>
+                            <label for="ALBERCA">ALBERCA</label>
+                            <input type="checkbox" name="location" value="ALBERCA" />
+                            
+                            <label for="CLIMA">CLIMA</label>
+                            <input type="checkbox" name="location" value="CLIMA" />
+                            
+                            <label for="TERRAZA">TERRAZA</label>
+                            <input type="checkbox" name="location" value="TERRAZA" />
+                            
+                            <label for="LAVANDERIA">LAVANDERIA</label>
+                            <input type="checkbox" name="location" value="LAVANDERIA" />
+                        </fieldset>
 
-                            <div class="checkbox">
-                                <label class="checkbox-inline" th:text="${facility}">
-                                    <input type="checkbox" th:field="*{checkedItems}" th:value="${facility}" />
-                                    2
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label class="checkbox-inline" th:text="${facility}">
-                                    <input type="checkbox" th:field="*{checkedItems}" th:value="${facility}" />
-                                    3
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label class="checkbox-inline" th:text="${facility}">
-                                    <input type="checkbox" th:field="*{checkedItems}" th:value="${facility}" />
-                                    4
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label class="checkbox-inline" th:text="${facility}">
-                                    <input type="checkbox" th:field="*{checkedItems}" th:value="${facility}" />
-                                    5
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label class="checkbox-inline" th:text="${facility}">
-                                    <input type="checkbox" th:field="*{checkedItems}" th:value="${facility}" />
-                                    6
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label class="checkbox-inline" th:text="${facility}">
-                                    <input type="checkbox" th:field="*{checkedItems}" th:value="${facility}" />
-                                    7
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label class="checkbox-inline" th:text="${facility}">
-                                    <input type="checkbox" th:field="*{checkedItems}" th:value="${facility}" />
-                                    8
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label class="checkbox-inline" th:text="${facility}">
-                                    <input type="checkbox" th:field="*{checkedItems}" th:value="${facility}" />
-                                    9
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                    </form>
+                </section>
             </div>
+            <br/>
+
 
             <div class="ubs">
                 <h3>Ubicacion</h3>
                 <div class="form-group-lg clearfix"></div>
-                <input class="controls3" type="text" name="calle" id1="#" placeholder="calle">
-                <input class="controls3" type="text" name="cruzamientos" id1="#" placeholder="cruzamientos">
-                <input class="controls3" type="text" name="NO.exterior" id1="#" placeholder="NO.exterior">
-                <input class="controls3" type="text" name="localidad" id1="#" placeholder="localidad">
-                <input class="controls3" type="text" name="estado" id1="#" placeholder="estado">
-                <input class="controls3" type="number" name="cp" id1="#" placeholder="cp">
-                <input class="controls3" type="text" name="ubicacion" id1="#" placeholder="ubicacion">
+                <input class="controls3" type="text" name="calle" id1="#" placeholder="Calle">
+                <input class="controls3" type="text" name="cruzamientos" id1="#" placeholder="Cruzamientos">
+                <input class="controls3" type="text" name="NO.exterior" id1="#" placeholder="No.exterior">
+                <input class="controls3" type="text" name="localidad" id1="#" placeholder="Localidad">
+                <input class="controls3" type="text" name="estado" id1="#" placeholder="Estado">
+                <input class="controls3" type="number" name="cp" id1="#" placeholder="Código Postal">
+                <input class="controls3" type="text" name="ubicacion" id1="#" placeholder="Ubicacion">
             </div>
+           
+                <input class="btn-grad" type="submit" value="Guardar">
 
-            <input class="botons" type="submit" value="Guardar">
         </form>
     </section>
 
