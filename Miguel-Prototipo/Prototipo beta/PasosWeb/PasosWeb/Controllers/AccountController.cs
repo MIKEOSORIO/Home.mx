@@ -40,7 +40,7 @@ namespace PasosWeb.Controllers
                 if (ModelState.IsValid)
                 {
                     //realizar las consultas
-                    PasosWeb.Models.dbhomemxEntities1 db = new dbhomemxEntities1();
+                    PasosWeb.Models.dbhomemxEntities2 db = new dbhomemxEntities2();
             var usuarios = db.usuario.ToList();
              var usuario = usuarios.Where(x => x.correo == Login.correo).Single();
 
@@ -176,7 +176,7 @@ namespace PasosWeb.Controllers
         public ActionResult Forgot(usuario user)
         {
           //  realizar las consultas
-            PasosWeb.Models.dbhomemxEntities1 db = new PasosWeb.Models.dbhomemxEntities1();
+            PasosWeb.Models.dbhomemxEntities2 db = new PasosWeb.Models.dbhomemxEntities2();
             var usuarios = db.usuario.ToList();
                 var usuario= usuarios.Where(x => x.correo == user.correo).Single();
 

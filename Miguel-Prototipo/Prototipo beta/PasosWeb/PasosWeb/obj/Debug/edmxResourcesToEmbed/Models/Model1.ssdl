@@ -20,7 +20,11 @@
       <PropertyRef Name="idimage" />
     </Key>
     <Property Name="idimage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="image" Type="image" />
+    <Property Name="imagen" Type="image" />
+    <Property Name="imagen1" Type="image" />
+    <Property Name="imagen2" Type="image" />
+    <Property Name="imagen3" Type="image" />
+    <Property Name="idpropiedad" Type="int" />
     <Property Name="auxiliar" Type="text" />
   </EntityType>
   <EntityType Name="mensaje">
@@ -81,16 +85,6 @@
     <Property Name="lavanderia" Type="bit" />
     <Property Name="auxiliar" Type="text" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="usuario">
     <Key>
       <PropertyRef Name="idusuario" />
@@ -102,21 +96,26 @@
     <Property Name="contraseña" Type="varchar" MaxLength="16" Nullable="false" />
     <Property Name="telefono" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="auxiliar" Type="text" />
+    <Property Name="idmensaje" Type="int" />
   </EntityType>
-  <Association Name="FK_mensaje_usuario">
-    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
-    <End Role="mensaje" Type="Self.mensaje" Multiplicity="*" />
+  <Association Name="FK_imagen_propiedad">
+    <End Role="propiedad" Type="Self.propiedad" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="imagen" Type="Self.imagen" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="usuario">
-        <PropertyRef Name="idusuario" />
+      <Principal Role="propiedad">
+        <PropertyRef Name="idpropiedad" />
       </Principal>
-      <Dependent Role="mensaje">
-        <PropertyRef Name="idReceptor" />
+      <Dependent Role="imagen">
+        <PropertyRef Name="idpropiedad" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_propiedad_direccion1">
-    <End Role="direccion" Type="Self.direccion" Multiplicity="1" />
+    <End Role="direccion" Type="Self.direccion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="propiedad" Type="Self.propiedad" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="direccion">
@@ -127,20 +126,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_propiedad_imagen">
-    <End Role="imagen" Type="Self.imagen" Multiplicity="0..1" />
-    <End Role="propiedad" Type="Self.propiedad" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="imagen">
-        <PropertyRef Name="idimage" />
-      </Principal>
-      <Dependent Role="propiedad">
-        <PropertyRef Name="idimagen" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_propiedad_servicios1">
-    <End Role="servicios" Type="Self.servicios" Multiplicity="1" />
+    <End Role="servicios" Type="Self.servicios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="propiedad" Type="Self.propiedad" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="servicios">
@@ -187,6 +176,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_usuario_mensaje1">
+    <End Role="mensaje" Type="Self.mensaje" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mensaje">
+        <PropertyRef Name="idmensaje" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="idmensaje" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="dbhomemxModelStoreContainer">
     <EntitySet Name="direccion" EntityType="Self.direccion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="imagen" EntityType="Self.imagen" Schema="dbo" store:Type="Tables" />
@@ -194,18 +195,13 @@
     <EntitySet Name="propiedad" EntityType="Self.propiedad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="renta" EntityType="Self.renta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="servicios" EntityType="Self.servicios" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_mensaje_usuario" Association="Self.FK_mensaje_usuario">
-      <End Role="usuario" EntitySet="usuario" />
-      <End Role="mensaje" EntitySet="mensaje" />
+    <AssociationSet Name="FK_imagen_propiedad" Association="Self.FK_imagen_propiedad">
+      <End Role="propiedad" EntitySet="propiedad" />
+      <End Role="imagen" EntitySet="imagen" />
     </AssociationSet>
     <AssociationSet Name="FK_propiedad_direccion1" Association="Self.FK_propiedad_direccion1">
       <End Role="direccion" EntitySet="direccion" />
-      <End Role="propiedad" EntitySet="propiedad" />
-    </AssociationSet>
-    <AssociationSet Name="FK_propiedad_imagen" Association="Self.FK_propiedad_imagen">
-      <End Role="imagen" EntitySet="imagen" />
       <End Role="propiedad" EntitySet="propiedad" />
     </AssociationSet>
     <AssociationSet Name="FK_propiedad_servicios1" Association="Self.FK_propiedad_servicios1">
@@ -223,6 +219,10 @@
     <AssociationSet Name="FK_renta_usuario1" Association="Self.FK_renta_usuario1">
       <End Role="usuario" EntitySet="usuario" />
       <End Role="renta" EntitySet="renta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuario_mensaje1" Association="Self.FK_usuario_mensaje1">
+      <End Role="mensaje" EntitySet="mensaje" />
+      <End Role="usuario" EntitySet="usuario" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

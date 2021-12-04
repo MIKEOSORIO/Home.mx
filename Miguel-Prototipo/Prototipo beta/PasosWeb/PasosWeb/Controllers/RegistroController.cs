@@ -8,7 +8,7 @@ namespace PasosWeb.Controllers
 {
     public class RegistroController : Controller
     {
-        PasosWeb.Models.dbhomemxEntities1 db = new PasosWeb.Models.dbhomemxEntities1();
+        PasosWeb.Models.dbhomemxEntities2 db = new PasosWeb.Models.dbhomemxEntities2();
         // GET: Registro
         public ActionResult Index()
         {

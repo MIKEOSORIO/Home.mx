@@ -20,7 +20,7 @@ namespace PasosWeb.Controllers {
             }
         }
 
-        PasosWeb.Models.dbhomemxEntities1 db = new PasosWeb.Models.dbhomemxEntities1();
+        PasosWeb.Models.dbhomemxEntities2 db = new PasosWeb.Models.dbhomemxEntities2();
 
         [ValidateInput(false)]
         public ActionResult CardViewPartial()

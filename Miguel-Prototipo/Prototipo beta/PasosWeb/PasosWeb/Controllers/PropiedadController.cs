@@ -15,7 +15,7 @@ namespace PasosWeb.Controllers
         {
 
             int idpropiedad = (int)Session["idpropiedad"];
-            PasosWeb.Models.dbhomemxEntities1 model = new Models.dbhomemxEntities1();
+            PasosWeb.Models.dbhomemxEntities2 model = new Models.dbhomemxEntities2();
             var propiedad = model.propiedad.Where(x=>x.idpropiedad== idpropiedad).Single();
             #region consultas
             // se localizan las tablas relacionadas
