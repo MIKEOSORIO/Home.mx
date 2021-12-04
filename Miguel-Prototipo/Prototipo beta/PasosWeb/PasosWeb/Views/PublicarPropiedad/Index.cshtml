@@ -52,20 +52,24 @@
         </nav>
     </div>
 
-    <section class="form-register">
-        <h4>Registrar</h4>
+    <section class="form-register111">
+        <h1>Registrar</h1>
         <form action="action_page.php">
-            <input class="controls2 " type="file" name="imagen" />
-            <input class="controls" type="text" name="Descripción" id="#" placeholder="Descripción">
-            <input class="controls" type="text" name="Numero de cuartos" id="#" placeholder="Numero de cuartos">
-            <input class="controls" type="text" name="Total de personas" id="#" placeholder="Total personas">
-            <input class="controls" type="text" name="precio" id="#" placeholder="Precio">
-            <input class="controls" type="text" name="Deposito" id="#" placeholder="Deposito">
-            <input class="controls" type="text" name="Contrato" id="#" placeholder="Contacto">
+            <div>
+                <input class="controls2 " type="file" name="imagen" />
+            </div>
 
-            <div class="row no-order">
+            <input class="controls" type="text" name="Descripción" id="#" placeholder="Descripción">
+            <input class="controls" type="number" name="Numero de cuartos" id="#" placeholder="Numero de cuartos">
+            <input class="controls" type="number" name="Total de personas" id="#" placeholder="Total personas">
+            <input class="controls" type="number" name="Precio" id="#" placeholder="Precio">
+            <input class="controls" type="number" name="Deposito" id="#" placeholder="Deposito">
+            <input class="controls" type="text" name="Contacto" id="#" placeholder="Contacto">
+
+
+            <div class="row no-order11">
                 <div class="form-group-lg col-xs-5">
-                    <label class="control-label" for="facilities">SERVICIOS</label>
+                    <h2>Servicios</h2>
                     <div class="form-group-lg clearfix">
                         <!--if this is your looped div, then you can just put the class "checkbox" in here-->
                         <div th:each="facility : ${facilities}">
@@ -124,23 +128,24 @@
                                     9
                                 </label>
                             </div>
-
-                            <div>
-                                <label class="control-label" for="facilities">UBICACION</label>
-                                <div class="form-group-lg clearfix"></div>
-                                <input class="controls3" type="text" name="calle" id1="#" placeholder="calle">
-                                <input class="controls3" type="text" name="cruzamientos" id1="#" placeholder="cruzamientos">
-                                <input class="controls3" type="text" name="NO.exterior" id1="#" placeholder="NO.exterior">
-                                <input class="controls3" type="text" name="localidad" id1="#" placeholder="localidad">
-                                <input class="controls3" type="text" name="estado" id1="#" placeholder="estado">
-                                <input class="controls3" type="text" name="cp" id1="#" placeholder="cp">
-                                <input class="controls3" type="text" name="ubicacion" id1="#" placeholder="ubicacion">
-                            </div>
                         </div>
-
                     </div>
+                </div>
+            </div>
 
-                    <input class="botons" type="submit" value="Guardar">
+            <div class="ubs">
+                <h3>Ubicacion</h3>
+                <div class="form-group-lg clearfix"></div>
+                <input class="controls3" type="text" name="calle" id1="#" placeholder="calle">
+                <input class="controls3" type="text" name="cruzamientos" id1="#" placeholder="cruzamientos">
+                <input class="controls3" type="text" name="NO.exterior" id1="#" placeholder="NO.exterior">
+                <input class="controls3" type="text" name="localidad" id1="#" placeholder="localidad">
+                <input class="controls3" type="text" name="estado" id1="#" placeholder="estado">
+                <input class="controls3" type="number" name="cp" id1="#" placeholder="cp">
+                <input class="controls3" type="text" name="ubicacion" id1="#" placeholder="ubicacion">
+            </div>
+
+            <input class="botons" type="submit" value="Guardar">
         </form>
     </section>
 

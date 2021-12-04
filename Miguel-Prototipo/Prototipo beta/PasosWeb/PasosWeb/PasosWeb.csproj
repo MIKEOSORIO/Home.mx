@@ -298,16 +298,6 @@
     <Content Include="Images\works\7.jpg" />
     <Content Include="Images\works\8.jpg" />
     <Content Include="Images\logo-home.png" />
-    <Content Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\ace.js" />
     <Content Include="Scripts\aspnet\dx.aspnet.data.js" />
     <Content Include="Scripts\aspnet\dx.aspnet.mvc.js" />
@@ -420,13 +410,6 @@
     <Content Include="Content\icons\dxiconsmaterial.ttf.bak" />
     <Content Include="Content\icons\dxiconsmaterial.woff.bak" />
     <Content Include="Content\icons\dxiconsmaterial.woff2.bak" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\style\PPrincipal\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\style\PPrincipal\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\style\PPrincipal\font-awesome\fonts\fontawesome-webfont.woff" />
@@ -627,6 +610,7 @@
     <Content Include="Views\PaginaPrincipal\Index.cshtml" />
     <Content Include="Views\Registro\Index.cshtml" />
     <Content Include="Views\PublicarPropiedad\Index.cshtml" />
+    <Content Include="Views\VisualizarPropiedad\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -647,53 +631,15 @@
     <Compile Include="Controllers\PropiedadController.cs" />
     <Compile Include="Controllers\PublicarPropiedadController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="Controllers\VisualizarPropiedadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\direccion.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ErrorInfo.cs" />
     <Compile Include="Models\Formulario.cs" />
-    <Compile Include="Models\imagen.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\mensaje.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\propiedad.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\propiedadGeneral.cs" />
-    <Compile Include="Models\renta.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\SampleData.cs" />
     <Compile Include="Models\SampleOrder.cs" />
-    <Compile Include="Models\servicios.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\usuario.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.form-register {
+.form-register111 {
     width: 850px;
     background: antiquewhite;
     padding: 30px;
@@ -14,11 +14,14 @@
     font-family: 'calibri';
     color: black;
     box-shadow: 7px 13px 37px #000;
+    position: absolute;
+    left: 250px;
 }
 
-    .form-register h4 {
+    .form-register111 h1 {
         font-size: 22px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+        text-align: center;
     }
 
 .controls {
@@ -34,18 +37,18 @@
 }
 
 .controls2 {
-    width: 27%;
+    width: 30%;
     background: white;
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
-    margin-bottom: -150px;
-    border: 1px solid #1f53c5;
+    margin-bottom: 10px;
+    border: 5px solid #1f53c5;
     font-family: 'calibri';
-    font-size: 18px;
+    font-size: 15px;
     color: black;
     position: absolute;
-    top: 250px;
-    right: 280px;
+    top: 150px;
+    left: 500px;
 }
 
 .controls3 {
@@ -60,9 +63,10 @@
     color: black;
 }
 
-.no-order div.checkbox {
+.no-order11 div.checkbox {
     float: left;
-    width: 33%
+    width: 33%;
+    margin-bottom: 20px;
 }
 
 .form-register p {
@@ -90,4 +94,17 @@
     color: white;
     margin: 16px 0;
     font-size: 16px;
+}
+
+.ubs h3 {
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+.no-order11 h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-align: center;
 }
