@@ -17,7 +17,6 @@ namespace PasosWeb.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public propiedad()
         {
-            this.imagen = new HashSet<imagen>();
             this.renta = new HashSet<renta>();
         }
     
@@ -30,15 +29,12 @@ namespace PasosWeb.Models
         public Nullable<System.DateTime> fechaAlta { get; set; }
         public string status { get; set; }
         public string contrato { get; set; }
-        public Nullable<int> idimagen { get; set; }
         public int iddireccion { get; set; }
         public int idservicios { get; set; }
         public int idusuario { get; set; }
         public string auxiliar { get; set; }
     
         public virtual direccion direccion { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<imagen> imagen { get; set; }
         public virtual servicios servicios { get; set; }
         public virtual usuario usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

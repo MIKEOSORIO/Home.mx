@@ -1,4 +1,4 @@
-﻿
+﻿@model PasosWeb.Models.propiedadGeneral
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,85 +51,97 @@
             <!-- /.container -->
         </nav>
     </div>
+    <form action="GridViewPartialAddNew" method="post" enctype="multipart/form-data"  multiple = "true">
+        <section class="form-register111">
+            <h1>Registrar</h1>
 
-    <section class="form-register111">
-        <h1>Registrar</h1>
-        <form action="action_page.php">
-            <div>
-                <input class="controls2 " type="file" name="imagen" />
-            </div>
+            @*<div>
+            <input class="controls2 " type="file" name="imagen" />
+        </div>*@
 
-            <input class="controls" type="text" name="Descripción" id="#" placeholder="Descripción">
-            <input class="controls" type="number" name="Numero de cuartos" id="#" placeholder="Numero de cuartos">
-            <input class="controls" type="number" name="Total de personas" id="#" placeholder="Total personas">
-            <input class="controls" type="number" name="Precio" id="#" placeholder="Precio">
-            <input class="controls" type="number" name="Deposito" id="#" placeholder="Deposito">
-            <input class="controls" type="text" name="Contacto" id="#" placeholder="Contrato">
+            @*<div class="inputFields">
+            @Html.TextBoxFor(x => x.auxiliarPropiedad, new { type = "file", multiple = "true", enctype = "multipart/form-data"})
+
+        </div>*@
+
+            <input type="file" name="file" id="file"  enctype = "multipart/form-data" />
+            <br />
+
+            @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Descripción" } })
+            @Html.EditorFor(model => model.numCuartos, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Número de habitaciones" } })
+            @Html.EditorFor(model => model.espacioPersonas, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Total espacio para personas" } })
+            @Html.EditorFor(model => model.precio, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Precio" } })
+            @Html.EditorFor(model => model.deposito, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Deposito" } })
+            @Html.EditorFor(model => model.contrato, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Contrato: Ejemplo: SÍ/NO" } })
+
+            <br />
 
             <div class="alinear">
                 <section>
-                    <form action="/">
-
-                        <fieldset>
-                            
-                               <h5>SERVICIOS</h5>
-                               
-                                    <label for="INTERNET">INTERNET</label>
-                                    <input type="checkbox" name="skillset" value="INTERNET" />
-
-                                    <label for="COMIDA">COMIDA</label>
-                                    <input type="checkbox" name="skillset" value="COMIDA" />
-
-                                    <label for="LIMPIEZA">LIMPIEZA</label>
-                                    <input type="checkbox" name="skillset" value="LIMPIEZA" />
-
-                                    <label for="AMUEBLADA">AMUEBLADA</label>
-                                    <input type="checkbox" name="skillset" value="AMUEBLADA" />
-
-                                    <label for="PARKING">PARKING</label>
-                                    <input type="checkbox" name="skillset" value="PARKING" />
-                                
-                                
-                        </fieldset>
 
 
-                        <fieldset>
-                            <label for="ALBERCA">ALBERCA</label>
-                            <input type="checkbox" name="location" value="ALBERCA" />
-                            
-                            <label for="CLIMA">CLIMA</label>
-                            <input type="checkbox" name="location" value="CLIMA" />
-                            
-                            <label for="TERRAZA">TERRAZA</label>
-                            <input type="checkbox" name="location" value="TERRAZA" />
-                            
-                            <label for="LAVANDERIA">LAVANDERIA</label>
-                            <input type="checkbox" name="location" value="LAVANDERIA" />
-                        </fieldset>
+                    <fieldset>
+
+                        <h5>Servicios</h5>
+
+                        <label for="INTERNET">INTERNET</label>
+                        @Html.CheckBoxFor(model => model.internet, new { htmlAttributes = new { @class = "form-control" } })
 
 
-                    </form>
+                        <label for="COMIDA">COMIDA</label>
+                        @Html.CheckBoxFor(model => model.comida, new { htmlAttributes = new { @class = "form-control" } })
+
+
+                        <label for="LIMPIEZA">LIMPIEZA</label>
+                        @Html.CheckBoxFor(model => model.limpieza, new { htmlAttributes = new { @class = "form-control" } })
+
+
+                        <label for="AMUEBLADA">AMUEBLADA</label>
+                        @Html.CheckBoxFor(model => model.amueblado, new { htmlAttributes = new { @class = "form-control" } })
+
+
+                        <label for="PARKING">PARKING</label>
+                        @Html.CheckBoxFor(model => model.parking, new { htmlAttributes = new { @class = "form-control" } })
+
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="ALBERCA">ALBERCA</label>
+                        @Html.CheckBoxFor(model => model.alberca, new { htmlAttributes = new { @class = "form-control" } })
+
+                        <label for="CLIMA">CLIMA</label>
+                        @Html.CheckBoxFor(model => model.clima, new { htmlAttributes = new { @class = "form-control" } })
+
+                        <label for="TERRAZA">TERRAZA</label>
+                        @Html.CheckBoxFor(model => model.terraza, new { htmlAttributes = new { @class = "form-control" } })
+
+                        <label for="LAVANDERIA">LAVANDERIA</label>
+                        @Html.CheckBoxFor(model => model.lavanderia, new { htmlAttributes = new { @class = "form-control" } })
+                    </fieldset>
+
+
+
                 </section>
             </div>
-            <br/>
+            <br />
 
 
             <div class="ubs">
                 <h3>Ubicacion</h3>
                 <div class="form-group-lg clearfix"></div>
-                <input class="controls3" type="text" name="calle" id1="#" placeholder="Calle">
-                <input class="controls3" type="text" name="cruzamientos" id1="#" placeholder="Cruzamientos">
-                <input class="controls3" type="text" name="NO.exterior" id1="#" placeholder="No.exterior">
-                <input class="controls3" type="text" name="localidad" id1="#" placeholder="Localidad">
-                <input class="controls3" type="text" name="estado" id1="#" placeholder="Estado">
-                <input class="controls3" type="number" name="cp" id1="#" placeholder="Código Postal">
-                <input class="controls3" type="text" name="ubicacion" id1="#" placeholder="Ubicacion">
+                @Html.EditorFor(model => model.calle, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Calle" } })
+                @Html.EditorFor(model => model.cruzamientos1, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Cruzaminetos" } })
+                @Html.EditorFor(model => model.exterior, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "No. Exterior" } })
+                @Html.EditorFor(model => model.localidad, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Localidad" } })
+                @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Estado" } })
+                @Html.EditorFor(model => model.cp, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Código Postal" } })
+                @Html.EditorFor(model => model.ubicacion, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Ubicación" } })
             </div>
-           
-                <input class="btn-grad" type="submit" value="Guardar">
 
-        </form>
-    </section>
+            <input class="btn-grad" type="submit" value="Guardar">
+
+        </section>
+    </form>
 
 </body>
 

@@ -16,19 +16,6 @@
     <Property Name="auxiliar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="propiedad" Relationship="Self.FK_propiedad_direccion1" FromRole="direccion" ToRole="propiedad" />
   </EntityType>
-  <EntityType Name="imagen">
-    <Key>
-      <PropertyRef Name="idimage" />
-    </Key>
-    <Property Name="idimage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="imagen1" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="imagen11" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="idpropiedad" Type="Int32" />
-    <Property Name="auxiliar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="propiedad" Relationship="Self.FK_imagen_propiedad" FromRole="imagen" ToRole="propiedad" />
-  </EntityType>
   <EntityType Name="mensaje">
     <Key>
       <PropertyRef Name="idmensaje" />
@@ -56,13 +43,11 @@
     <Property Name="fechaAlta" Type="DateTime" Precision="0" />
     <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="contrato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="idimagen" Type="Int32" />
     <Property Name="iddireccion" Type="Int32" Nullable="false" />
     <Property Name="idservicios" Type="Int32" Nullable="false" />
     <Property Name="idusuario" Type="Int32" Nullable="false" />
     <Property Name="auxiliar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="direccion" Relationship="Self.FK_propiedad_direccion1" FromRole="propiedad" ToRole="direccion" />
-    <NavigationProperty Name="imagen" Relationship="Self.FK_imagen_propiedad" FromRole="propiedad" ToRole="imagen" />
     <NavigationProperty Name="servicios" Relationship="Self.FK_propiedad_servicios1" FromRole="propiedad" ToRole="servicios" />
     <NavigationProperty Name="usuario" Relationship="Self.FK_propiedad_usuario" FromRole="propiedad" ToRole="usuario" />
     <NavigationProperty Name="renta" Relationship="Self.FK_renta_propiedad" FromRole="propiedad" ToRole="renta" />
@@ -123,20 +108,6 @@
       </Principal>
       <Dependent Role="propiedad">
         <PropertyRef Name="iddireccion" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_imagen_propiedad">
-    <End Role="propiedad" Type="Self.propiedad" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="imagen" Type="Self.imagen" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="propiedad">
-        <PropertyRef Name="idpropiedad" />
-      </Principal>
-      <Dependent Role="imagen">
-        <PropertyRef Name="idpropiedad" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -204,7 +175,6 @@
   </Association>
   <EntityContainer Name="dbhomemxEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="direccion" EntityType="Self.direccion" />
-    <EntitySet Name="imagen" EntityType="Self.imagen" />
     <EntitySet Name="mensaje" EntityType="Self.mensaje" />
     <EntitySet Name="propiedad" EntityType="Self.propiedad" />
     <EntitySet Name="renta" EntityType="Self.renta" />
@@ -213,10 +183,6 @@
     <AssociationSet Name="FK_propiedad_direccion1" Association="Self.FK_propiedad_direccion1">
       <End Role="direccion" EntitySet="direccion" />
       <End Role="propiedad" EntitySet="propiedad" />
-    </AssociationSet>
-    <AssociationSet Name="FK_imagen_propiedad" Association="Self.FK_imagen_propiedad">
-      <End Role="propiedad" EntitySet="propiedad" />
-      <End Role="imagen" EntitySet="imagen" />
     </AssociationSet>
     <AssociationSet Name="FK_usuario_mensaje1" Association="Self.FK_usuario_mensaje1">
       <End Role="mensaje" EntitySet="mensaje" />

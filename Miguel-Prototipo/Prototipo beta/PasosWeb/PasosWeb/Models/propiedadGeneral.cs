@@ -53,9 +53,11 @@ namespace PasosWeb.Models
         public string calle { get; set; }
         public string cruzamientos1 { get; set; }
         public string cruzamientos2 { get; set; }
+        public string exterior { get; set; }
         public string localidad { get; set; }
         public string estado { get; set; }
         public int cp { get; set; }
+        public string ubicacion { get; set; }
         #endregion
 
         

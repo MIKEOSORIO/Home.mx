@@ -26,7 +26,6 @@ namespace PasosWeb.Models
         }
     
         public virtual DbSet<direccion> direccion { get; set; }
-        public virtual DbSet<imagen> imagen { get; set; }
         public virtual DbSet<mensaje> mensaje { get; set; }
         public virtual DbSet<propiedad> propiedad { get; set; }
         public virtual DbSet<renta> renta { get; set; }

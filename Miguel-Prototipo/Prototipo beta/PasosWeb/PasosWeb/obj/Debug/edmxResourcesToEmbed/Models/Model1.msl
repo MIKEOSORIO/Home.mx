@@ -17,19 +17,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="imagen">
-      <EntityTypeMapping TypeName="dbhomemxModel.imagen">
-        <MappingFragment StoreEntitySet="imagen">
-          <ScalarProperty Name="idimage" ColumnName="idimage" />
-          <ScalarProperty Name="imagen1" ColumnName="imagen" />
-          <ScalarProperty Name="imagen11" ColumnName="imagen1" />
-          <ScalarProperty Name="imagen2" ColumnName="imagen2" />
-          <ScalarProperty Name="imagen3" ColumnName="imagen3" />
-          <ScalarProperty Name="idpropiedad" ColumnName="idpropiedad" />
-          <ScalarProperty Name="auxiliar" ColumnName="auxiliar" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="mensaje">
       <EntityTypeMapping TypeName="dbhomemxModel.mensaje">
         <MappingFragment StoreEntitySet="mensaje">
@@ -56,7 +43,6 @@
           <ScalarProperty Name="fechaAlta" ColumnName="fechaAlta" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="contrato" ColumnName="contrato" />
-          <ScalarProperty Name="idimagen" ColumnName="idimagen" />
           <ScalarProperty Name="iddireccion" ColumnName="iddireccion" />
           <ScalarProperty Name="idservicios" ColumnName="idservicios" />
           <ScalarProperty Name="idusuario" ColumnName="idusuario" />

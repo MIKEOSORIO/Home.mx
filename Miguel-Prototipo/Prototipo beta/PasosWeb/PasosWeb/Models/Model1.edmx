@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbhomemxModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbhomemxModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="direccion">
           <Key>
             <PropertyRef Name="iddireccion" />
@@ -18,18 +18,6 @@
           <Property Name="entidadFed" Type="text" Nullable="false" />
           <Property Name="cp" Type="int" Nullable="false" />
           <Property Name="ubicacion" Type="text" Nullable="false" />
-          <Property Name="auxiliar" Type="text" />
-        </EntityType>
-        <EntityType Name="imagen">
-          <Key>
-            <PropertyRef Name="idimage" />
-          </Key>
-          <Property Name="idimage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="imagen" Type="image" />
-          <Property Name="imagen1" Type="image" />
-          <Property Name="imagen2" Type="image" />
-          <Property Name="imagen3" Type="image" />
-          <Property Name="idpropiedad" Type="int" />
           <Property Name="auxiliar" Type="text" />
         </EntityType>
         <EntityType Name="mensaje">
@@ -58,7 +46,6 @@
           <Property Name="fechaAlta" Type="date" />
           <Property Name="status" Type="varchar" MaxLength="50" />
           <Property Name="contrato" Type="varchar" MaxLength="50" />
-          <Property Name="idimagen" Type="int" />
           <Property Name="iddireccion" Type="int" Nullable="false" />
           <Property Name="idservicios" Type="int" Nullable="false" />
           <Property Name="idusuario" Type="int" Nullable="false" />
@@ -103,20 +90,6 @@
           <Property Name="auxiliar" Type="text" />
           <Property Name="idmensaje" Type="int" />
         </EntityType>
-        <Association Name="FK_imagen_propiedad">
-          <End Role="propiedad" Type="Self.propiedad" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="imagen" Type="Self.imagen" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="propiedad">
-              <PropertyRef Name="idpropiedad" />
-            </Principal>
-            <Dependent Role="imagen">
-              <PropertyRef Name="idpropiedad" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_propiedad_direccion1">
           <End Role="direccion" Type="Self.direccion" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -195,16 +168,11 @@
         </Association>
         <EntityContainer Name="dbhomemxModelStoreContainer">
           <EntitySet Name="direccion" EntityType="Self.direccion" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="imagen" EntityType="Self.imagen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mensaje" EntityType="Self.mensaje" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="propiedad" EntityType="Self.propiedad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="renta" EntityType="Self.renta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="servicios" EntityType="Self.servicios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_imagen_propiedad" Association="Self.FK_imagen_propiedad">
-            <End Role="propiedad" EntitySet="propiedad" />
-            <End Role="imagen" EntitySet="imagen" />
-          </AssociationSet>
           <AssociationSet Name="FK_propiedad_direccion1" Association="Self.FK_propiedad_direccion1">
             <End Role="direccion" EntitySet="direccion" />
             <End Role="propiedad" EntitySet="propiedad" />
@@ -230,8 +198,7 @@
             <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbhomemxModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -250,19 +217,6 @@
           <Property Name="ubicacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="auxiliar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="propiedad" Relationship="Self.FK_propiedad_direccion1" FromRole="direccion" ToRole="propiedad" />
-        </EntityType>
-        <EntityType Name="imagen">
-          <Key>
-            <PropertyRef Name="idimage" />
-          </Key>
-          <Property Name="idimage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="imagen1" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="imagen11" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="imagen2" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="imagen3" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="idpropiedad" Type="Int32" />
-          <Property Name="auxiliar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="propiedad" Relationship="Self.FK_imagen_propiedad" FromRole="imagen" ToRole="propiedad" />
         </EntityType>
         <EntityType Name="mensaje">
           <Key>
@@ -291,13 +245,11 @@
           <Property Name="fechaAlta" Type="DateTime" Precision="0" />
           <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="contrato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="idimagen" Type="Int32" />
           <Property Name="iddireccion" Type="Int32" Nullable="false" />
           <Property Name="idservicios" Type="Int32" Nullable="false" />
           <Property Name="idusuario" Type="Int32" Nullable="false" />
           <Property Name="auxiliar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="direccion" Relationship="Self.FK_propiedad_direccion1" FromRole="propiedad" ToRole="direccion" />
-          <NavigationProperty Name="imagen" Relationship="Self.FK_imagen_propiedad" FromRole="propiedad" ToRole="imagen" />
           <NavigationProperty Name="servicios" Relationship="Self.FK_propiedad_servicios1" FromRole="propiedad" ToRole="servicios" />
           <NavigationProperty Name="usuario" Relationship="Self.FK_propiedad_usuario" FromRole="propiedad" ToRole="usuario" />
           <NavigationProperty Name="renta" Relationship="Self.FK_renta_propiedad" FromRole="propiedad" ToRole="renta" />
@@ -358,20 +310,6 @@
             </Principal>
             <Dependent Role="propiedad">
               <PropertyRef Name="iddireccion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_imagen_propiedad">
-          <End Role="propiedad" Type="Self.propiedad" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="imagen" Type="Self.imagen" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="propiedad">
-              <PropertyRef Name="idpropiedad" />
-            </Principal>
-            <Dependent Role="imagen">
-              <PropertyRef Name="idpropiedad" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -439,7 +377,6 @@
         </Association>
         <EntityContainer Name="dbhomemxEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="direccion" EntityType="Self.direccion" />
-          <EntitySet Name="imagen" EntityType="Self.imagen" />
           <EntitySet Name="mensaje" EntityType="Self.mensaje" />
           <EntitySet Name="propiedad" EntityType="Self.propiedad" />
           <EntitySet Name="renta" EntityType="Self.renta" />
@@ -448,10 +385,6 @@
           <AssociationSet Name="FK_propiedad_direccion1" Association="Self.FK_propiedad_direccion1">
             <End Role="direccion" EntitySet="direccion" />
             <End Role="propiedad" EntitySet="propiedad" />
-          </AssociationSet>
-          <AssociationSet Name="FK_imagen_propiedad" Association="Self.FK_imagen_propiedad">
-            <End Role="propiedad" EntitySet="propiedad" />
-            <End Role="imagen" EntitySet="imagen" />
           </AssociationSet>
           <AssociationSet Name="FK_usuario_mensaje1" Association="Self.FK_usuario_mensaje1">
             <End Role="mensaje" EntitySet="mensaje" />
@@ -496,19 +429,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="imagen">
-            <EntityTypeMapping TypeName="dbhomemxModel.imagen">
-              <MappingFragment StoreEntitySet="imagen">
-                <ScalarProperty Name="idimage" ColumnName="idimage" />
-                <ScalarProperty Name="imagen1" ColumnName="imagen" />
-                <ScalarProperty Name="imagen11" ColumnName="imagen1" />
-                <ScalarProperty Name="imagen2" ColumnName="imagen2" />
-                <ScalarProperty Name="imagen3" ColumnName="imagen3" />
-                <ScalarProperty Name="idpropiedad" ColumnName="idpropiedad" />
-                <ScalarProperty Name="auxiliar" ColumnName="auxiliar" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="mensaje">
             <EntityTypeMapping TypeName="dbhomemxModel.mensaje">
               <MappingFragment StoreEntitySet="mensaje">
@@ -535,7 +455,6 @@
                 <ScalarProperty Name="fechaAlta" ColumnName="fechaAlta" />
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="contrato" ColumnName="contrato" />
-                <ScalarProperty Name="idimagen" ColumnName="idimagen" />
                 <ScalarProperty Name="iddireccion" ColumnName="iddireccion" />
                 <ScalarProperty Name="idservicios" ColumnName="idservicios" />
                 <ScalarProperty Name="idusuario" ColumnName="idusuario" />

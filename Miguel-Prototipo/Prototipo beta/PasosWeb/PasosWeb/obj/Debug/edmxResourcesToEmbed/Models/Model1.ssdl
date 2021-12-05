@@ -15,18 +15,6 @@
     <Property Name="ubicacion" Type="text" Nullable="false" />
     <Property Name="auxiliar" Type="text" />
   </EntityType>
-  <EntityType Name="imagen">
-    <Key>
-      <PropertyRef Name="idimage" />
-    </Key>
-    <Property Name="idimage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="imagen" Type="image" />
-    <Property Name="imagen1" Type="image" />
-    <Property Name="imagen2" Type="image" />
-    <Property Name="imagen3" Type="image" />
-    <Property Name="idpropiedad" Type="int" />
-    <Property Name="auxiliar" Type="text" />
-  </EntityType>
   <EntityType Name="mensaje">
     <Key>
       <PropertyRef Name="idmensaje" />
@@ -53,7 +41,6 @@
     <Property Name="fechaAlta" Type="date" />
     <Property Name="status" Type="varchar" MaxLength="50" />
     <Property Name="contrato" Type="varchar" MaxLength="50" />
-    <Property Name="idimagen" Type="int" />
     <Property Name="iddireccion" Type="int" Nullable="false" />
     <Property Name="idservicios" Type="int" Nullable="false" />
     <Property Name="idusuario" Type="int" Nullable="false" />
@@ -98,20 +85,6 @@
     <Property Name="auxiliar" Type="text" />
     <Property Name="idmensaje" Type="int" />
   </EntityType>
-  <Association Name="FK_imagen_propiedad">
-    <End Role="propiedad" Type="Self.propiedad" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="imagen" Type="Self.imagen" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="propiedad">
-        <PropertyRef Name="idpropiedad" />
-      </Principal>
-      <Dependent Role="imagen">
-        <PropertyRef Name="idpropiedad" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_propiedad_direccion1">
     <End Role="direccion" Type="Self.direccion" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -190,16 +163,11 @@
   </Association>
   <EntityContainer Name="dbhomemxModelStoreContainer">
     <EntitySet Name="direccion" EntityType="Self.direccion" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="imagen" EntityType="Self.imagen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mensaje" EntityType="Self.mensaje" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="propiedad" EntityType="Self.propiedad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="renta" EntityType="Self.renta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="servicios" EntityType="Self.servicios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_imagen_propiedad" Association="Self.FK_imagen_propiedad">
-      <End Role="propiedad" EntitySet="propiedad" />
-      <End Role="imagen" EntitySet="imagen" />
-    </AssociationSet>
     <AssociationSet Name="FK_propiedad_direccion1" Association="Self.FK_propiedad_direccion1">
       <End Role="direccion" EntitySet="direccion" />
       <End Role="propiedad" EntitySet="propiedad" />

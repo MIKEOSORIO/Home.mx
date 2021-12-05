@@ -22,12 +22,7 @@ namespace PasosWeb.Controllers
 
             var servicios = model.servicios.Where(x => x.idservicios == propiedad.idservicios).Single();
             var direccion = model.direccion.Where(x => x.iddireccion == propiedad.iddireccion).Single();
-            var imagen = model.imagen.Where(x => x.idimage == propiedad.idimagen).ToList();
-
             
-            foreach (PasosWeb.Models.imagen img in imagen){
-                
-            }
 
             var usuario = model.usuario.Where(x => x.idusuario == propiedad.idusuario).Single();
             #endregion
