@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-md-2">
                         <div class="site-logo">
-                            <a href="index.html"><img src="~/Images/logo-home.png" alt="" /></a>
+                            <a href="/Home/Index"><img src="~/Images/logo-home.png" alt="" /></a>
                         </div>
                     </div>
 
@@ -38,9 +38,9 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="menu">
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="/Home/Index"">Home</a></li>
-                                <li><a href="~/PublicarPropiedad/Index">Publicar</a></li>
-                                <li><a href="">Historial</a></li>
+                                <li class="active"><a href="/Home/Index">Home</a></li>
+                                <li><a href="~/Home/Index">Home</a></li>
+                                <li><a href="~/EditarPropiedad/Index">Historial</a></li>
                             </ul>
                         </div>
                         <!-- /.Navbar-collapse -->
@@ -64,15 +64,17 @@
 
         </div>*@
 
-            <input type="file" name="file" id="file"  enctype = "multipart/form-data" />
+            <input type="file" name="file" id="file" enctype="multipart/form-data" />
             <br />
-
-            @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Descripción" } })
+            @Html.EditorFor(model => model.corta, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Descripción Corta" } })
+            @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Descripción Completa" } })
             @Html.EditorFor(model => model.numCuartos, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Número de habitaciones" } })
             @Html.EditorFor(model => model.espacioPersonas, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Total espacio para personas" } })
             @Html.EditorFor(model => model.precio, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Precio" } })
             @Html.EditorFor(model => model.deposito, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Deposito" } })
             @Html.EditorFor(model => model.contrato, new { htmlAttributes = new { @class = "controls", PlaceHolder = "Contrato: Ejemplo: SÍ/NO" } })
+
+
 
             <br />
 
@@ -130,7 +132,8 @@
                 <h3>Ubicacion</h3>
                 <div class="form-group-lg clearfix"></div>
                 @Html.EditorFor(model => model.calle, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Calle" } })
-                @Html.EditorFor(model => model.cruzamientos1, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Cruzaminetos" } })
+                @Html.EditorFor(model => model.cruzamientos1, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Cruzamientos" } })
+                @Html.EditorFor(model => model.cruzamientos2, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Colonia" } })
                 @Html.EditorFor(model => model.exterior, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "No. Exterior" } })
                 @Html.EditorFor(model => model.localidad, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Localidad" } })
                 @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "controls3", PlaceHolder = "Estado" } })

@@ -57,7 +57,8 @@ namespace PasosWeb.Controllers
                 //Session["RolUser"] = usuario.rol;
                 Session["NameUser"] = usuario.nombre;
                 Session["LastUser"] = usuario.apellido;
-
+                Session["Email"] = usuario.correo;
+                Session["Phone"] = usuario.telefono;
 
                 return RedirectToAction("Index", "Home");
             }

@@ -203,6 +203,7 @@
     <Content Include="Content\login.css" />
     <Content Include="Content\logoversion.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\style\PEditar\style.css" />
     <Content Include="Content\style\PPrincipal\animate.css" />
     <Content Include="Content\style\PPrincipal\bootstrap.css" />
     <Content Include="Content\style\PPrincipal\bootstrap.min.css" />
@@ -229,10 +230,17 @@
     <Content Include="Content\style\PPrincipal\pe-icon-7-stroke.css" />
     <Content Include="Content\style\PPrincipal\slippry.css" />
     <Content Include="Content\style\PPrincipal\stylePrincipal.css" />
+    <Content Include="Content\style\PPropiedad\overlay.css" />
+    <Content Include="Content\style\PPropiedad\plugin.css" />
+    <Content Include="Content\style\PPropiedad\stylo-propiedad.css" />
     <Content Include="Content\style\PPublicar\style-publicar.css" />
     <Content Include="Content\style\Registro\RegistroStyle.css" />
     <Content Include="Content\style\style.css" />
     <Content Include="Departamentos\ejemplo.jpg" />
+    <Content Include="Documents\Eduardo Cupul\2019_Proveedores.txt" />
+    <Content Include="Documents\Miguel Angel Cupul Osorio\casa1.jpg" />
+    <Content Include="Documents\Miguel Angel Cupul Osorio\casa2.jpg" />
+    <Content Include="Documents\Miguel Angel Cupul Osorio\departamento1.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\blacklist.png" />
@@ -270,7 +278,7 @@
     <Content Include="Images\parallax\pexels-photo-2082089.jpeg" />
     <Content Include="Images\payment.png" />
     <Content Include="Images\pazossanchez.png" />
-    <Content Include="Images\pexels-johannes-plenio-1103970.jpg" />
+    <Content Include="Images\PPropiedad\bed.svg" />
     <Content Include="Images\profile.png" />
     <Content Include="Images\Registro\background-registro.jpg" />
     <Content Include="Images\Registro\logo-mx.png" />
@@ -463,6 +471,9 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Home-MX - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Home-MX - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\Home-mx - Web Deploy2.pubxml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
@@ -628,6 +639,8 @@
     <Content Include="Views\Registro\Index.cshtml" />
     <Content Include="Views\PublicarPropiedad\Index.cshtml" />
     <Content Include="Views\VisualizarPropiedad\Index.cshtml" />
+    <Content Include="Views\EditarPropiedad\Index.cshtml" />
+    <Content Include="Views\EditarPropiedad\_CardViewPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -643,6 +656,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DireccionController.cs" />
+    <Compile Include="Controllers\EditarPropiedadController.cs" />
     <Compile Include="Controllers\Filters\VerifySesion.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaginaPrincipalController.cs" />
@@ -698,9 +712,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Direccion\" />
-    <Folder Include="Views\Imagen\" />
-    <Folder Include="Views\Servicios\" />
+    <Folder Include="Documents\a a\" />
+    <Folder Include="Documents\Angel Eduardo Cupul Osorio\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

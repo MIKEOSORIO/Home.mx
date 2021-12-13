@@ -27,6 +27,7 @@ namespace PasosWeb.Models
         public string status { get; set; }
         public string auxiliarPropiedad { get; set; }
         public string contrato { get; set; }
+        public string corta { get; set; }
         #endregion
 
         #region Servicios

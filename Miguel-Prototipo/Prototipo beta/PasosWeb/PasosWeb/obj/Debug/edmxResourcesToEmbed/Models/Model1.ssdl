@@ -45,6 +45,7 @@
     <Property Name="idservicios" Type="int" Nullable="false" />
     <Property Name="idusuario" Type="int" Nullable="false" />
     <Property Name="auxiliar" Type="text" />
+    <Property Name="corta" Type="text" />
   </EntityType>
   <EntityType Name="renta">
     <Key>

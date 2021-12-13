@@ -32,7 +32,7 @@
         //settings.Columns.Add("descripcion");
         settings.Columns.Add(c =>
         {
-            c.FieldName = "descripcion";
+            c.FieldName = "corta";
             c.Caption = "Descripcion";
         });
 
@@ -44,6 +44,12 @@
             c.Caption = "Habitaciones";
         });
         //settings.Columns.Add("precio");
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "espacioPersonas";
+            c.Caption = "Espacio Personas";
+        });
+
         settings.Columns.Add(c =>
         {
             c.FieldName = "precio";
@@ -68,12 +74,13 @@
 
         settings.CardLayoutProperties.Items.AddCommandItem(i =>
         {
-            // i.ShowNewButton = true;
-            //  i.ShowEditButton = true;
+            //i.ShowNewButton = true;
+            //i.ShowEditButton = true;
             i.ShowDeleteButton = true;
         });
         settings.CardLayoutProperties.Items.AddEditModeCommandItem();
-        settings.CardLayoutProperties.Items.Add("descripcion");
+        settings.CardLayoutProperties.Items.Add("corta");
+        settings.CardLayoutProperties.Items.Add("espacioPersonas");
         settings.CardLayoutProperties.Items.Add("numCuartos");
         settings.CardLayoutProperties.Items.Add("precio");
 

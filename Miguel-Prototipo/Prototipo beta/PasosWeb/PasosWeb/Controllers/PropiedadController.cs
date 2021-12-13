@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
@@ -13,56 +15,70 @@ namespace PasosWeb.Controllers
         // GET: Propiedad
         public ActionResult Index()
         {
+            if (Session["IdUser"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "PaginaPrincipal");
+            }
 
-            int idpropiedad = (int)Session["idpropiedad"];
-            PasosWeb.Models.dbhomemxEntities2 model = new Models.dbhomemxEntities2();
-            var propiedad = model.propiedad.Where(x=>x.idpropiedad== idpropiedad).Single();
-            #region consultas
-            // se localizan las tablas relacionadas
-
-            var servicios = model.servicios.Where(x => x.idservicios == propiedad.idservicios).Single();
-            var direccion = model.direccion.Where(x => x.iddireccion == propiedad.iddireccion).Single();
+        }
+        [HttpPost, ValidateInput(false)]
+        public ActionResult EnviarFormulario(PasosWeb.Models.Formulario formulario )
+        {
+            PasosWeb.Models.usuario user = new Models.usuario();
             
+            // es email del usuario logueado
+            user.correo = (string)Session["Email"];
+            user.telefono = (string)Session["Phone"];
+            user.nombre = (string)Session["NameUser"];
+            user.apellido = (string)Session["LastUser"];
+          
+           // user.nombre= 
+            EmailUser(user, user.correo, user.telefono, user.nombre, user.apellido);
+            return RedirectToAction("Index", "Propiedad");
 
-            var usuario = model.usuario.Where(x => x.idusuario == propiedad.idusuario).Single();
-            #endregion
-            #region rellenar
-            // se llena la tabla PropiedadGeneral
-            PasosWeb.Models.propiedadGeneral resumen = new Models.propiedadGeneral();
-            resumen.descripcion = propiedad.descripcion;
-            resumen.numCuartos = propiedad.numCuartos;
-            resumen.espacioPersonas = propiedad.espacioPersonas;
-            resumen.precio = propiedad.precio;
-            resumen.deposito = propiedad.deposito;
-            resumen.fechaPublicacion = (DateTime)propiedad.fechaAlta;
-            resumen.status = propiedad.status;
-            resumen.contrato = propiedad.contrato;
-            // se llena la tabla servicios
-            resumen.internet = (Boolean)servicios.internet;
-            resumen.comida = (Boolean)servicios.comida;
-            resumen.limpieza = (Boolean)servicios.limpieza;
-            resumen.amueblado = (Boolean)servicios.amueblada;
-            resumen.parking = (Boolean)servicios.parking;
-            resumen.alberca = (Boolean)servicios.alberca;
-            resumen.clima = (Boolean)servicios.clima;
-            resumen.terraza = (Boolean)servicios.terraza;
-            resumen.lavanderia = (Boolean)servicios.lavanderia;
-            // se llena la tabla usuario
-            resumen.nombre = usuario.nombre;
-            resumen.apellido = usuario.apellido;
-            resumen.correo = usuario.correo;
-            resumen.telefono = usuario.telefono;
-            // se llena la tabla direccion
-            resumen.calle = direccion.calle;
-            resumen.cruzamientos1 = direccion.cruzamiento1;
-            resumen.cruzamientos2 = direccion.cruzamiento2;
-            resumen.localidad = direccion.localidad;
-            resumen.estado = direccion.entidadFed;
-            resumen.cp = direccion.cp;
-            #endregion
-            Session["resumen"] = resumen;
-            //Session["imagen"] = imagen;
-            return View();
+        }
+        public void EmailUser(PasosWeb.Models.usuario user, string correo, string telefono, string nombre, string apellido)
+        {
+            string emailpublicador = (string)Session["usuarioPublicador"];
+            var fromAddress = new MailAddress("soporte.homemx@outlook.es", "Nombre de Soporte");
+            var toAddress = new MailAddress(emailpublicador, "Estimado Usuario");
+           
+
+            const string fromPassword = "@miangelyazmin1A";
+            const string subject = "Este usuario esta interesado en tu publicación";
+            string body = "<body>" +
+               "<h1>Solicitud de Envío de Información</h1>" +
+               "<h2>Usuario</h2>" +
+                "<h3>Nombre de Usuario: </h3>" + nombre +  " " + apellido + 
+                "<h3>Correo Electrónico: </h3>" + correo +
+                 "<h3>Telefono: </h3>" + telefono +
+                "<br/>" +
+               "<span>El correo maneja datos sensible, Por Favor, No comparta la Información ni Reenvíe el Correo</span>" +
+               "<br/><br/><span>Saludos Cordiales.</span>" +
+               "</body>";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.office365.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                IsBodyHtml = true,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            }
         }
     }
 }

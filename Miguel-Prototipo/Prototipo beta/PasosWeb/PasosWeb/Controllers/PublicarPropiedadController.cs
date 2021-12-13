@@ -14,7 +14,14 @@ namespace PasosWeb.Controllers
         // GET: Registro
         public ActionResult Index()
         {
-            return View();
+            if (Session["IdUser"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "PaginaPrincipal");
+            }
         }
         [HttpPost, ValidateInput(false)]
         public ActionResult GridViewPartialAddNew(PasosWeb.Models.propiedadGeneral item, HttpPostedFileBase file)
@@ -43,6 +50,7 @@ namespace PasosWeb.Controllers
                     propiedad.fechaAlta = DateTime.Now;
                     propiedad.status = "Activo";
                     propiedad.contrato = item.contrato;
+                    propiedad.corta = item.corta;
 
                     propiedad.idusuario = (int)Session["IdUser"];
                     propiedad.auxiliar = Guardar(file, item);
@@ -71,7 +79,7 @@ namespace PasosWeb.Controllers
             if (postedFile != null)
             {
                 string path = Server.MapPath("~/Documents/");
-                string directorio = "~/Documents/";
+                string directorio = "/Documents/";
                 String folder = item.nombre + " " + item.apellido + "/";
                 String ubicacion = path + folder;
                 if (!Directory.Exists(ubicacion))

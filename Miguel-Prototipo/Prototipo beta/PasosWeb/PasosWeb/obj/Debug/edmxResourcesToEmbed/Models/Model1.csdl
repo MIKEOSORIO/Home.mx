@@ -51,6 +51,7 @@
     <NavigationProperty Name="servicios" Relationship="Self.FK_propiedad_servicios1" FromRole="propiedad" ToRole="servicios" />
     <NavigationProperty Name="usuario" Relationship="Self.FK_propiedad_usuario" FromRole="propiedad" ToRole="usuario" />
     <NavigationProperty Name="renta" Relationship="Self.FK_renta_propiedad" FromRole="propiedad" ToRole="renta" />
+    <Property Name="corta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="renta">
     <Key>

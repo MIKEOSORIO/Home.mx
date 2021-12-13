@@ -34,6 +34,7 @@
     <EntitySetMapping Name="propiedad">
       <EntityTypeMapping TypeName="dbhomemxModel.propiedad">
         <MappingFragment StoreEntitySet="propiedad">
+          <ScalarProperty Name="corta" ColumnName="corta" />
           <ScalarProperty Name="idpropiedad" ColumnName="idpropiedad" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           <ScalarProperty Name="numCuartos" ColumnName="numCuartos" />

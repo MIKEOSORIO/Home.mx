@@ -11,7 +11,14 @@ namespace PasosWeb.Controllers
         // GET: VisualizarPropiedad
         public ActionResult Index()
         {
-            return View();
+            if (Session["IdUser"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "PaginaPrincipal");
+            }
         }
     }
 }
