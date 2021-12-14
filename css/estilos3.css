@@ -1,0 +1,44 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+}
+
+.linea{
+	background: #550b51;
+	height: 5px;
+	width: 100%;
+	display: block;
+}
+
+.linea2{
+	background:;
+	height: 5px;
+	width: 100%;
+	display: block;
+}
+
+.linea3{
+	background: #550b51;
+	height: 1px;
+	width: 100%;
+	display: block;
+}
+.galeria{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	width: 95%;
+	margin: auto;
+	padding: 40px 0;
+	overflow: hidden;
+}
+.galeria img{
+	width: 100%;
+	vertical-align: top;
+	height: 300px;
+	object-fit: cover;
+}

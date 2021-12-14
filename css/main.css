@@ -1,0 +1,278 @@
+/****start global rules ****/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    background-image: url('https://cdn.pixabay.com/photo/2020/04/12/18/13/background-5035258_960_720.jpg');
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.devider {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 1px;
+    margin-bottom: 5px;
+}
+
+.devider span {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #888;
+}
+
+
+/********* End glibal rule ***/
+
+.container {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    background-color: white;
+}
+
+.container .contact {
+    width: 35%;
+    /* background-color: turquoise; */
+    border-right: 1px solid #6b6b6b;
+}
+
+.container .contact .search {
+    padding: 20px;
+    display: flex;
+}
+
+.container .contact .search input {
+    display: block;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 18px;
+    padding: 10px 20px;
+    background-color: #dadada;
+    border: 1px solid rgb(165, 165, 165);
+    /* border: none; */
+    width: 100%;
+}
+
+.container .contact .search .story {
+    width: 40%;
+}
+
+.container .contact .search .story span {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(61, 133, 192);
+    color: white;
+    border-radius: 50%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.container .contact .search .story span i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 100;
+    opacity: .8;
+}
+
+.contacts {}
+
+.contact-usr {
+    padding: 5px 20px;
+    font-size: 13px;
+    display: flex;
+    margin-bottom: 10px;
+    /* border-bottom: 1px solid #888; */
+}
+
+.contact-usr .avatar {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.contact-usr .avatar .img_container {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-usr .avatar .img_container img {
+    width: 100%;
+}
+
+.contact-usr .msg .name {
+    font-size: 13px;
+    /* color: black; */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-usr .msg {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contact-usr .msg .lead {
+    font-size: 12px;
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100px;
+}
+
+.msg_date {
+    font-size: 10px;
+    color: #888;
+    font-weight: initial;
+    float: right;
+}
+
+.unread {
+    background-color: rgb(61, 133, 192);
+}
+
+.unread .msg .lead,
+.unread,
+.unread .name .msg_date {
+    color: white;
+}
+
+.chat-box {
+    width: 65%;
+    position: relative;
+}
+
+.chat-box header {
+    width: 100%;
+    padding: 20px;
+    background-color: #f7f7f7;
+    display: block;
+}
+
+.messages {
+    padding: 20px
+}
+
+.messages .usr-msg {
+    display: block;
+    width: fit-content;
+    background-color: #3d85c0;
+    padding: 10px;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.messages .usr-msg::before {
+    content: '';
+    border: 6px solid;
+    border-color: #3d85c0 #3d85c0 #fa807200 #b2222200;
+    left: -7px;
+    position: absolute;
+    height: 0;
+    top: 0%;
+}
+
+.msg-block {
+    font-size: 13px;
+}
+
+.messages .rec-msg {
+    display: block;
+    width: fit-content;
+    background-color: #f7f7f7;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    float: right;
+    border-radius: 5px;
+    position: relative;
+}
+
+.messages .rec-msg::after {
+    content: '';
+    border: 6px solid;
+    border-color: #F7F7F7 #ff3e3e00 #393fff00 #F7F7F7;
+    right: -7px;
+    position: absolute;
+    height: 0;
+    top: 0%;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.field {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.field input {
+    display: block;
+    width: 100%;
+    background-color: #f7f7f7;
+    padding: 10px 70px 10px 40px;
+    border: none;
+    outline: none;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container i {
+    position: absolute;
+    color: #888;
+}
+
+.input-container i:nth-child(1) {
+    top: 10px;
+    left: 10px;
+}
+
+.input-container i:nth-child(2) {
+    top: 10px;
+    right: 40px;
+}
+
+.input-container i:nth-child(3) {
+    top: 10px;
+    right: 10px;
+}
